@@ -15,15 +15,15 @@ app.get("/another-one", (req, res) => {
   res.send("This one works too!");
 });
 
+app.delete("/delete-one", (req, res) => {
+  Array.splice(3, 1);
+});
+
 exports.api = functions.https.onRequest(app);
 
 exports.helloThere = functions.https.onRequest((req, res) => {
   res.send("Hello there Firebase Cloud user!");
 });
-
-   
-
-
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
